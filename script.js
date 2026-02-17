@@ -4,6 +4,32 @@ document.addEventListener('DOMContentLoaded', () => {
     // ----------------------------------------------------
     // 1. Dynamic Navigation Shadow on Scroll
     // ----------------------------------------------------
+// Magnifying Glass Scroll Effect
+    const magSection = document.getElementById('magnifier-section');
+    const glass = document.getElementById('magnifying-glass');
+    const magContent = document.getElementById('magnifier-content');
+
+    if (magSection && glass && magContent) {
+        window.addEventListener('scroll', () => {
+            const rect = magSection.getBoundingClientRect();
+            // Calculate how far down the user has scrolled within this specific section
+            const scrollProgress = Math.max(0, Math.min(1, -rect.top / (rect.height - window.innerHeight)));
+            
+            // Scale from 1 to 40 times its original size
+            const scaleValue = 1 + (scrollProgress * 40);
+            glass.style.transform = `scale(${scaleValue})`;
+
+            // Once the lens is massive, fade in the CTA button inside it
+            if (scaleValue > 15) {
+                magContent.style.opacity = '1';
+                magContent.style.pointerEvents = 'auto'; // Make button clickable
+            } else {
+                magContent.style.opacity = '0';
+                magContent.style.pointerEvents = 'none';
+            }
+        });
+    }
+
     const nav = document.getElementById('main-nav');
     if (nav) {
         window.addEventListener('scroll', () => {
