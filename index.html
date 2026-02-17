@@ -1,101 +1,232 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Build a Cog | The Gladiator Suite</title>
+    <title>Executive Intelligence | The Syndicate</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&family=Outfit:wght@400;700;900&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
-<body class="bg-[#FFFFF0] text-[#1A1A1A] antialiased overflow-x-hidden selection:bg-purple-900 selection:text-white">
+<body class="antialiased vhs-grid">
 
-    <div id="money-canvas" class="fixed inset-0 pointer-events-none z-[9999]"></div>
+    <nav class="w-full bg-[#0A0A0A] border-b-4 border-[#7000FF] sticky top-0 z-50 transition-shadow duration-300">
+        <div class="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-4 cursor-pointer group">
+                <div class="w-12 h-12 bg-black border-2 border-[#FF107A] rounded-xl flex items-center justify-center group-hover:bg-[#FF107A] transition-colors duration-300">
+                    <svg class="w-7 h-7 text-[#FF107A] group-hover:text-black transition-colors" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M17.5 4a3.5 3.5 0 00-2.8 1.43 8.9 8.9 0 00-5.4 0A3.5 3.5 0 106 8.5v.17c-2.3.8-4 3.03-4 5.83 0 3.31 2.69 6 6 6h8c3.31 0 6-2.69 6-6 0-2.8-1.7-5.02-4-5.83V8.5a3.5 3.5 0 00-1.5-2.87V4h-1zM7 7.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zm11.5 1.5a1.5 1.5 0 110-3 1.5 1.5 0 010 3zM10 16a2 2 0 11-4 0h4zm8 0a2 2 0 11-4 0h4z"/>
+                    </svg>
+                </div>
+                <div class="font-action font-black text-2xl text-white tracking-widest uppercase">
+                    The <span class="text-[#FF107A]">Agency</span>
+                </div>
+            </a>
+            
+            <div class="hidden lg:flex space-x-8 font-bold text-xs uppercase tracking-widest text-gray-400">
+                <a href="#intel" class="hover:text-[#FF107A] transition">The Intel</a>
+                <a href="#proof" class="hover:text-[#FF107A] transition">Wall of Proof</a>
+                <a href="methodology.html" class="hover:text-[#FF107A] transition">Methodology</a>
+                <a href="about.html" class="hover:text-[#FF107A] transition">The Dossier</a>
+            </div>
 
-    <nav class="border-b border-purple-900/10 py-6 px-12 flex justify-between items-center bg-[#FFFFF0]/90 backdrop-blur-md sticky top-0 z-[100]">
-        <div class="text-2xl font-black tracking-tighter uppercase italic text-purple-950">
-            Build <span class="font-light">A Cog</span>
-        </div>
-        <div class="space-x-12 text-[10px] uppercase tracking-[0.4em] font-bold text-purple-900/60">
-            <a href="#showroom" class="hover:text-purple-600 transition">Showroom</a>
-            <a href="#kill-count" class="hover:text-purple-600 transition">The Path</a>
-            <a href="#clients" class="hover:text-purple-600 transition">Partners</a>
+            <a href="clearance.html" class="hidden md:block px-8 py-3 bg-[#7000FF] text-white font-action font-black uppercase tracking-widest text-sm hover:bg-[#FF107A] transition-colors duration-300">
+                Request Clearance
+            </a>
         </div>
     </nav>
 
-    <section class="relative h-[80vh] flex items-center justify-center border-b border-purple-100">
-        <div class="relative z-10 text-center px-6">
-            <h1 class="text-7xl md:text-9xl font-serif mb-8 tracking-tighter text-purple-950">
-                Survival <br> <span class="italic font-light">Of The Richest.</span>
+    <section class="relative pt-24 pb-32 px-6 overflow-hidden">
+        <div class="max-w-6xl mx-auto relative z-10">
+            <div class="inline-flex items-center gap-2 mb-8 border-2 border-[#7000FF] px-4 py-1 bg-white">
+                <div class="w-2 h-2 bg-[#FF107A] animate-pulse"></div>
+                <span class="text-[#7000FF] text-xs font-bold tracking-[0.3em] uppercase">Status: Unbothered & Optimized</span>
+            </div>
+
+            <h1 class="font-action text-7xl md:text-[110px] font-black uppercase leading-[0.85] tracking-tighter mb-8">
+                Drop The Mic <br>
+                <span class="text-outline text-8xl md:text-[130px]">On Your Next</span> <br>
+                <span class="snoop-gradient">Hire.</span>
             </h1>
-            <p class="max-w-xl mx-auto text-lg text-gray-500 font-light mb-12">
-                We don't source talent. We salvage the victors of corporate warfare. Every Cog is a gladiator who refused to die.
-            </p>
-            <button class="money-trigger px-10 py-4 bg-purple-950 text-white uppercase text-xs tracking-widest font-bold hover:bg-black transition-all">
-                Acquire The Victor
-            </button>
-        </div>
-    </section>
 
-    <section id="clients" class="py-16 border-b border-purple-100 bg-white/50">
-        <div class="max-w-7xl mx-auto px-12">
-            <p class="text-center text-[10px] uppercase tracking-[0.5em] text-gray-400 mb-12">Supplying the World's Most Ruthless Machines</p>
-            <div class="flex flex-wrap justify-center gap-16 opacity-40 grayscale contrast-125">
-                <span class="text-2xl font-serif font-bold tracking-tighter italic">VANDYKE-CORP</span>
-                <span class="text-2xl font-sans font-black tracking-widest">AETHER_IND</span>
-                <span class="text-2xl font-serif italic">OmniConsumer</span>
-                <span class="text-2xl font-sans font-light tracking-[0.3em]">HARKNESS.</span>
-                <span class="text-2xl font-serif font-black">GLOBO-DYNAMICS</span>
+            <div class="max-w-2xl border-l-4 border-[#FF107A] pl-6 py-2 mb-12">
+                <p class="text-xl font-medium text-gray-800 leading-relaxed">
+                    Human capital is the only capital that matters. We act as discreet advisors to secure C-Suite and SEO leaders who don't just fit the culture—they build the dynasty. 
+                </p>
             </div>
         </div>
     </section>
 
-    <section id="kill-count" class="py-32 px-12 bg-[#F5F5F0]">
-        <div class="max-w-5xl mx-auto">
-            <div class="text-center mb-24">
-                <h2 class="text-5xl font-serif text-purple-950 mb-6">The Path to the Top</h2>
-                <p class="text-gray-400 uppercase tracking-widest text-xs">A literal headcount</p>
+    <section id="proof" class="py-24 bg-black border-y-8 border-[#7000FF] overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 mb-12 flex justify-between items-end">
+            <h2 class="font-action text-5xl font-black text-white uppercase">The <span class="text-[#FF107A]">Receipts</span></h2>
+            <span class="text-gray-500 font-bold tracking-[0.3em] uppercase text-xs">Unredacted Feedback</span>
+        </div>
+        
+        <div class="relative w-full flex overflow-x-hidden">
+            <div class="animate-marquee flex whitespace-nowrap gap-8 px-4">
+                <div class="w-[450px] bg-[#0A0A0A] border border-gray-800 p-8 whitespace-normal shadow-[4px_4px_0px_#7000FF]">
+                    <div class="text-[#FF107A] text-4xl font-serif leading-none mb-2">"</div>
+                    <p class="text-gray-300 font-medium mb-6 leading-relaxed">"They told me my compensation package was weak before they even took the contract. They were right. We fixed it, and they brought me an SEO Director who doubled our organic revenue in 14 months."</p>
+                    <div class="font-action font-bold uppercase tracking-widest text-white text-sm">— CEO, Global FinTech</div>
+                </div>
+                <div class="w-[450px] bg-[#0A0A0A] border border-gray-800 p-8 whitespace-normal shadow-[4px_4px_0px_#7000FF]">
+                    <div class="text-[#FF107A] text-4xl font-serif leading-none mb-2">"</div>
+                    <p class="text-gray-300 font-medium mb-6 leading-relaxed">"No fluff. No bloated candidate files. They sent exactly three people for our CMO role. All three could have done the job flawlessly. It saved me 40 hours of interviewing."</p>
+                    <div class="font-action font-bold uppercase tracking-widest text-white text-sm">— Board Member, SaaS Unicorn</div>
+                </div>
+                <div class="w-[450px] bg-[#0A0A0A] border border-gray-800 p-8 whitespace-normal shadow-[4px_4px_0px_#7000FF]">
+                    <div class="text-[#FF107A] text-4xl font-serif leading-none mb-2">"</div>
+                    <p class="text-gray-300 font-medium mb-6 leading-relaxed">"The Syndicate operates like a shadow agency. They knew exactly who was unhappy at our competitors and extracted them quietly. Absolute professionals."</p>
+                    <div class="font-action font-bold uppercase tracking-widest text-white text-sm">— VP of Growth, E-commerce</div>
+                </div>
             </div>
-
-            <div class="grid md:grid-cols-3 gap-12 text-center">
-                <div class="relative group p-8">
-                    <img src="https://cdn-icons-png.flaticon.com/512/2991/2991613.png" class="w-16 h-16 mx-auto mb-8 opacity-20 group-hover:opacity-100 transition duration-500" alt="Skull">
-                    <h3 class="text-xl font-serif mb-4 italic">The Entry-Level Arena</h3>
-                    <p class="text-sm text-gray-500 leading-relaxed">
-                        3,000 analysts enter. 1 remains. The others were simply "repurposed" into the foundation of the building.
-                    </p>
+            <div class="animate-marquee flex whitespace-nowrap gap-8 px-4" aria-hidden="true">
+                <div class="w-[450px] bg-[#0A0A0A] border border-gray-800 p-8 whitespace-normal shadow-[4px_4px_0px_#7000FF]">
+                    <div class="text-[#FF107A] text-4xl font-serif leading-none mb-2">"</div>
+                    <p class="text-gray-300 font-medium mb-6 leading-relaxed">"They told me my compensation package was weak before they even took the contract. They were right. We fixed it, and they brought me an SEO Director who doubled our organic revenue in 14 months."</p>
+                    <div class="font-action font-bold uppercase tracking-widest text-white text-sm">— CEO, Global FinTech</div>
                 </div>
-                <div class="relative group p-8">
-                    <img src="https://cdn-icons-png.flaticon.com/512/2991/2991613.png" class="w-20 h-20 mx-auto mb-8 opacity-40 group-hover:opacity-100 transition duration-500" alt="Skull">
-                    <h3 class="text-xl font-serif mb-4 italic">The VP Meatgrinder</h3>
-                    <p class="text-sm text-gray-500 leading-relaxed">
-                        To reach the mid-tier, one must learn to smile while pulling the ladder up. Our VPs have the highest "colleague termination" rate in the industry.
-                    </p>
+                <div class="w-[450px] bg-[#0A0A0A] border border-gray-800 p-8 whitespace-normal shadow-[4px_4px_0px_#7000FF]">
+                    <div class="text-[#FF107A] text-4xl font-serif leading-none mb-2">"</div>
+                    <p class="text-gray-300 font-medium mb-6 leading-relaxed">"No fluff. No bloated candidate files. They sent exactly three people for our CMO role. All three could have done the job flawlessly. It saved me 40 hours of interviewing."</p>
+                    <div class="font-action font-bold uppercase tracking-widest text-white text-sm">— Board Member, SaaS Unicorn</div>
                 </div>
-                <div class="relative group p-8">
-                    <img src="https://cdn-icons-png.flaticon.com/512/2991/2991613.png" class="w-24 h-24 mx-auto mb-8 opacity-80 group-hover:opacity-100 transition duration-500" alt="Skull">
-                    <h3 class="text-xl font-serif mb-4 italic">The C-Suite Throne</h3>
-                    <p class="text-sm text-gray-500 leading-relaxed">
-                        The final Cog. He didn't just climb the mountain; he built it out of his rivals. 100% pure, refined, murderous ambition.
-                    </p>
+                <div class="w-[450px] bg-[#0A0A0A] border border-gray-800 p-8 whitespace-normal shadow-[4px_4px_0px_#7000FF]">
+                    <div class="text-[#FF107A] text-4xl font-serif leading-none mb-2">"</div>
+                    <p class="text-gray-300 font-medium mb-6 leading-relaxed">"The Syndicate operates like a shadow agency. They knew exactly who was unhappy at our competitors and extracted them quietly. Absolute professionals."</p>
+                    <div class="font-action font-bold uppercase tracking-widest text-white text-sm">— VP of Growth, E-commerce</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="py-32 bg-purple-950 text-white text-center px-6 overflow-hidden relative">
-        <div class="absolute opacity-5 -left-10 top-0 text-[300px] font-black pointer-events-none">VICTOR</div>
-        <div class="max-w-3xl mx-auto relative z-10">
-            <p class="text-3xl md:text-5xl font-serif italic leading-tight mb-12">
-                "It felt like a gladiator pit every day... until I realized I was the only one holding a sword."
-            </p>
-            <span class="text-xs font-bold uppercase tracking-[0.8em] text-purple-400">— Anonymous CEO #001</span>
+    <section class="py-40 bg-[#050505] relative overflow-hidden flex items-center justify-center border-b-[16px] border-[#FF107A]">
+        <div class="smoke smoke-1"></div>
+        <div class="smoke smoke-2"></div>
+        <div class="smoke smoke-3"></div>
+
+        <div class="max-w-5xl mx-auto relative z-10 flex flex-col md:flex-row items-center gap-16 px-6">
+            
+            <div class="relative w-64 h-64 md:w-80 md:h-80 drop-shadow-[0_0_30px_rgba(255,16,122,0.2)]">
+                <svg viewBox="0 0 200 200" class="w-full h-full">
+                    <path d="M120,180 C110,150 130,120 160,110 L190,105 C195,100 185,90 170,95 L140,105 C120,110 90,130 80,160 Z" fill="#1A1A1A" stroke="#7000FF" stroke-width="2"/>
+                    <path d="M140,105 L150,85 C155,75 145,70 135,80 L110,110" fill="#1A1A1A" stroke="#7000FF" stroke-width="2"/>
+                    <rect x="50" y="85" width="90" height="12" rx="4" fill="#0A0A0A" stroke="#333" stroke-width="2" transform="rotate(-15 95 90)"/>
+                    <circle cx="48" cy="98" r="6" fill="#FF107A" class="animate-pulse"/>
+                    <circle cx="48" cy="98" r="8" fill="rgba(255,16,122,0.4)" class="animate-pulse" style="animation-delay: 0.5s;"/>
+                </svg>
+            </div>
+
+            <div class="text-center md:text-left">
+                <h2 class="font-action text-5xl md:text-7xl font-black text-white uppercase mb-6 leading-[0.9]">
+                    The Hunt <br> <span class="text-[#7000FF]">Ends Here.</span>
+                </h2>
+                <p class="text-xl text-gray-400 font-medium mb-10 max-w-md">
+                    Stop gambling on your leadership team. Pour a drink, hand us the brief, and consider the role filled.
+                </p>
+                <a href="clearance.html" class="inline-block px-12 py-5 bg-transparent border-2 border-[#FF107A] text-[#FF107A] font-action font-black uppercase tracking-[0.2em] text-lg hover:bg-[#FF107A] hover:text-black transition-all duration-300 shadow-[0_0_20px_rgba(255,16,122,0.2)] hover:shadow-[0_0_40px_rgba(255,16,122,0.6)]">
+                    Initiate The Wire
+                </a>
+            </div>
         </div>
     </section>
 
-    <footer class="py-12 text-center text-[10px] uppercase tracking-widest text-gray-400">
-        &copy; 2026 BUILD A COG | KILL YOUR IDOLS. HIRE THE SURVIVOR.
+    <section class="py-32 bg-[#050505] relative overflow-hidden flex items-center justify-center border-b-[16px] border-[#FF107A]">
+        <div class="smoke smoke-1" aria-hidden="true"></div>
+        <div class="smoke smoke-2" aria-hidden="true"></div>
+        <div class="smoke smoke-3" aria-hidden="true"></div>
+
+        <div class="max-w-6xl mx-auto relative z-10 flex flex-col md:flex-row items-center justify-between gap-16 px-6 w-full">
+            
+            <div class="text-center md:text-left md:w-1/2">
+                <div class="inline-flex items-center gap-2 mb-6 border border-[#7000FF] px-4 py-1 bg-[#111]">
+                    <div class="w-2 h-2 bg-[#FF107A] animate-pulse"></div>
+                    <span class="text-[#7000FF] text-[10px] font-bold tracking-[0.3em] uppercase">Ready To Deploy</span>
+                </div>
+                <h2 class="font-action text-5xl md:text-7xl font-black text-white uppercase mb-6 leading-[0.9]">
+                    The Hunt <br> <span class="text-[#7000FF]">Ends Here.</span>
+                </h2>
+                <p class="text-xl text-gray-400 font-medium mb-10 max-w-md mx-auto md:mx-0">
+                    Stop gambling on your leadership team. Pour a drink, hand us the brief, and consider the role filled.
+                </p>
+                <a href="clearance.html" aria-label="Request Clearance" class="inline-block px-12 py-5 bg-transparent border-2 border-[#FF107A] text-[#FF107A] font-action font-black uppercase tracking-[0.2em] text-lg hover:bg-[#FF107A] hover:text-black transition-all duration-300 shadow-[0_0_20px_rgba(255,16,122,0.2)] hover:shadow-[0_0_40px_rgba(255,16,122,0.6)]">
+                    Initiate The Wire
+                </a>
+            </div>
+
+            <div class="relative w-64 h-64 md:w-80 md:h-80 drop-shadow-[0_0_30px_rgba(255,16,122,0.2)] md:w-1/2 flex justify-center" aria-hidden="true">
+                <svg viewBox="0 0 200 200" class="w-full h-full max-w-[300px]">
+                    <path d="M120,180 C110,150 130,120 160,110 L190,105 C195,100 185,90 170,95 L140,105 C120,110 90,130 80,160 Z" fill="#1A1A1A" stroke="#7000FF" stroke-width="2"/>
+                    <path d="M140,105 L150,85 C155,75 145,70 135,80 L110,110" fill="#1A1A1A" stroke="#7000FF" stroke-width="2"/>
+                    <rect x="50" y="85" width="90" height="12" rx="4" fill="#0A0A0A" stroke="#333" stroke-width="2" transform="rotate(-15 95 90)"/>
+                    <circle cx="48" cy="98" r="6" fill="#FF107A" class="animate-pulse"/>
+                    <circle cx="48" cy="98" r="8" fill="rgba(255,16,122,0.4)" class="animate-pulse" style="animation-delay: 0.5s;"/>
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-[#0A0A0A] pt-24 pb-12 px-6">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+            
+            <div class="col-span-1 md:col-span-1">
+                <div class="flex items-center gap-3 mb-6">
+                    <svg class="w-8 h-8 text-[#FF107A]" aria-hidden="true" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M17.5 4a3.5 3.5 0 00-2.8 1.43 8.9 8.9 0 00-5.4 0A3.5 3.5 0 106 8.5v.17c-2.3.8-4 3.03-4 5.83 0 3.31 2.69 6 6 6h8c3.31 0 6-2.69 6-6 0-2.8-1.7-5.02-4-5.83V8.5a3.5 3.5 0 00-1.5-2.87V4h-1zM7 7.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zm11.5 1.5a1.5 1.5 0 110-3 1.5 1.5 0 010 3zM10 16a2 2 0 11-4 0h4zm8 0a2 2 0 11-4 0h4z"/>
+                    </svg>
+                    <span class="font-action font-black text-xl text-white uppercase tracking-widest">The Agency</span>
+                </div>
+                <p class="text-gray-500 text-sm font-medium leading-relaxed mb-6">
+                    Engineering elite leadership ecosystems for the world's most demanding boards.
+                </p>
+                <a href="mailto:partners@theagency.com" class="text-[#7000FF] hover:text-[#FF107A] font-bold text-xs uppercase tracking-widest transition-colors">
+                    partners@theagency.com
+                </a>
+            </div>
+
+            <div>
+                <h4 class="font-action font-black text-white uppercase tracking-widest mb-6 border-b border-gray-800 pb-2">The Intel</h4>
+                <ul class="space-y-3 text-sm font-bold text-gray-500 uppercase tracking-widest">
+                    <li><a href="methodology.html" class="hover:text-[#FF107A] transition focus:outline-none focus:text-[#FF107A]">Methodology</a></li>
+                    <li><a href="archives.html" class="hover:text-[#FF107A] transition focus:outline-none focus:text-[#FF107A]">The Archives</a></li>
+                    <li><a href="about.html" class="hover:text-[#FF107A] transition focus:outline-none focus:text-[#FF107A]">Our 10-Year File</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="font-action font-black text-white uppercase tracking-widest mb-6 border-b border-gray-800 pb-2">Candidates</h4>
+                <ul class="space-y-3 text-sm font-bold text-gray-500 uppercase tracking-widest">
+                    <li><a href="#" class="hover:text-[#FF107A] transition focus:outline-none focus:text-[#FF107A]">The Syndicate Roster</a></li>
+                    <li><a href="#" class="hover:text-[#FF107A] transition focus:outline-none focus:text-[#FF107A]">Interview Protocol</a></li>
+                    <li><a href="clearance.html" class="hover:text-[#FF107A] transition focus:outline-none focus:text-[#FF107A]">Submit Dossier</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="font-action font-black text-white uppercase tracking-widest mb-6 border-b border-gray-800 pb-2">The Wire</h4>
+                <p class="text-gray-500 text-sm font-medium mb-4">Quarterly intelligence on executive comp, SEO trends, and C-Suite movement. No spam.</p>
+                <form class="flex" action="#" method="POST" onsubmit="event.preventDefault();">
+                    <input type="email" aria-label="Email Address" required placeholder="YOUR@EMAIL.COM" class="w-full bg-black border border-gray-800 px-4 py-2 text-white text-xs font-bold uppercase tracking-widest focus:outline-none focus:border-[#7000FF] transition-colors">
+                    <button type="submit" aria-label="Subscribe" class="bg-[#7000FF] px-4 text-white hover:bg-[#FF107A] transition-colors focus:outline-none">
+                        <svg class="w-4 h-4" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                    </button>
+                </form>
+            </div>
+
+        </div>
+
+        <div class="max-w-7xl mx-auto border-t border-gray-900 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] font-bold text-gray-600 uppercase tracking-[0.3em]">
+            <p>&copy; 2026 THE AGENCY. CONFIDENTIAL.</p>
+            <div class="flex gap-6">
+                <a href="#" class="hover:text-white transition focus:outline-none">Privacy Protocol</a>
+                <a href="#" class="hover:text-white transition focus:outline-none">Terms of Engagement</a>
+            </div>
+        </div>
     </footer>
 
-    <script src="script.js"></script>
 </body>
 </html>

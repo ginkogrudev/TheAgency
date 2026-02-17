@@ -1,40 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&family=Outfit:wght@400;700;900&display=swap');
+
 :root {
-    --ivory: #FFFFF0;
-    --royal-purple: #2D1B4E;
+    --royal-purple: #7000FF;
+    --fresh-white: #F8F9FA;
+    --neon-pink: #FF107A;
+    --dark-bg: #0A0A0A;
 }
 
 body {
-    cursor: crosshair;
+    background-color: var(--fresh-white);
+    color: #111;
+    font-family: 'Space Grotesk', sans-serif;
+    overflow-x: hidden;
 }
 
-h1, h2, h3, .font-serif {
-    font-family: 'Times New Roman', Times, serif;
-    letter-spacing: -0.03em;
+.font-action {
+    font-family: 'Outfit', sans-serif;
 }
 
-/* Money Falling Animation */
-.money-bill {
-    position: fixed;
+.text-outline {
+    color: transparent;
+    -webkit-text-stroke: 1px var(--royal-purple);
+}
+
+.snoop-gradient {
+    background: linear-gradient(90deg, #7000FF 0%, #B829FF 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.vhs-grid {
+    background-size: 40px 40px;
+    background-image: 
+        linear-gradient(to right, rgba(112, 0, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(112, 0, 255, 0.05) 1px, transparent 1px);
+}
+
+/* MARQUEE ANIMATION FOR REVIEWS */
+.animate-marquee {
+    animation: marquee 25s linear infinite;
+}
+
+@keyframes marquee {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-100%); }
+}
+
+/* THE X-FACTOR: CIGAR SMOKE ANIMATION */
+.smoke {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: radial-gradient(circle, rgba(255,16,122,0.8) 0%, rgba(112,0,255,0) 70%);
+    border-radius: 50%;
+    filter: blur(15px);
+    opacity: 0;
     pointer-events: none;
-    z-index: 9999;
-    animation: fall linear forwards;
-    filter: drop-shadow(0 5px 10px rgba(0,0,0,0.2));
 }
 
-@keyframes fall {
-    0% { transform: translateY(-100px) rotate(0deg); opacity: 1; }
-    100% { transform: translateY(110vh) rotate(720deg); opacity: 0; }
-}
+.smoke-1 { animation: rise 4s ease-in infinite; left: 30%; bottom: 30%; }
+.smoke-2 { animation: rise 5s ease-in infinite 1s; left: 28%; bottom: 30%; }
+.smoke-3 { animation: rise 6s ease-in infinite 2s; left: 32%; bottom: 30%; }
 
-/* Grayscale Logo Styling */
-#clients span {
-    filter: grayscale(100%);
-    transition: all 0.4s ease;
-    cursor: help;
-}
-
-#clients span:hover {
-    filter: grayscale(0%);
-    color: #4B0082;
-    transform: scale(1.1);
+@keyframes rise {
+    0% {
+        transform: translateY(0) scale(1) translateX(0);
+        opacity: 0.8;
+    }
+    50% {
+        transform: translateY(-150px) scale(3) translateX(-20px);
+        opacity: 0.4;
+    }
+    100% {
+        transform: translateY(-300px) scale(6) translateX(40px);
+        opacity: 0;
+    }
 }
