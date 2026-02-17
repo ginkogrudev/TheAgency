@@ -336,29 +336,27 @@
         </section>
     </main>
 
-    <section id="magnifier-section" class="relative h-[200vh] bg-[#050505] border-y border-[#7000FF]">
-        <div class="sticky top-0 h-screen flex flex-col items-center justify-center overflow-hidden">
+    <section id="circle-section" class="relative h-[250vh] bg-[#050505] border-y border-[#7000FF]">
+        <div class="sticky top-0 h-screen w-full flex flex-col items-center justify-center overflow-hidden">
             
-            <h2 class="font-action text-3xl md:text-5xl text-white mb-8 z-20 absolute top-32 uppercase tracking-widest text-center">
-                Look <span class="text-[#FF107A]">Closer.</span>
+            <h2 id="circle-text" class="font-action text-3xl md:text-5xl text-white mb-8 z-20 absolute top-1/4 uppercase tracking-widest text-center transition-opacity duration-300 pointer-events-none">
+                The Final <span class="text-[#FF107A]">Step.</span>
             </h2>
             
-            <div id="magnifying-glass" class="relative z-10 w-32 h-32 md:w-48 md:h-48 transition-transform duration-75 ease-out will-change-transform floaty">
-                
-                <svg viewBox="0 0 24 24" fill="none" stroke="#FF107A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-full h-full drop-shadow-[0_0_20px_rgba(255,16,122,0.6)]">
-                    <circle cx="11" cy="11" r="8"></circle>
-                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                </svg>
-
-                <div id="magnifier-content" class="absolute top-1/2 left-1/2 -translate-x-[60%] -translate-y-[60%] w-[50%] h-[50%] flex items-center justify-center opacity-0 transition-opacity duration-300 pointer-events-none">
-                    <a href="clearance.html" class="text-[3px] font-action font-black text-black uppercase text-center bg-[#FF107A] px-2 py-1 hover:bg-white transition-colors pointer-events-auto shadow-[0_0_2px_#FF107A]">
-                        Get A Candidate Like That
-                    </a>
-                </div>
+            <div id="expanding-circle" class="absolute z-10 w-4 h-4 rounded-full bg-[#FF107A] transition-transform duration-75 ease-out will-change-transform shadow-[0_0_40px_rgba(255,16,122,1)]" aria-hidden="true">
             </div>
 
-            <p class="text-gray-500 uppercase tracking-widest font-bold text-[10px] absolute bottom-12 animate-pulse">
-                Scroll Down To Inspect
+            <div id="circle-content" class="absolute z-30 flex flex-col items-center justify-center opacity-0 transition-opacity duration-500 pointer-events-none w-full px-6">
+                <h3 class="font-action text-5xl md:text-7xl font-black text-black uppercase mb-8 text-center leading-[0.9] tracking-tighter">
+                    Ready To <br>Make The Hire?
+                </h3>
+                <a href="clearance.html" aria-label="Start Your Search" class="inline-block px-12 py-5 bg-black text-white font-action font-black uppercase tracking-[0.2em] text-lg hover:bg-[#7000FF] focus:outline-none focus:ring-4 focus:ring-white transition-all duration-300 shadow-2xl pointer-events-auto">
+                    Start Your Search
+                </a>
+            </div>
+
+            <p id="scroll-prompt" class="text-gray-500 uppercase tracking-widest font-bold text-[10px] absolute bottom-12 animate-pulse z-20 transition-opacity duration-300 pointer-events-none">
+                Scroll Down
             </p>
         </div>
     </section>
@@ -417,7 +415,7 @@
         <div class="max-w-7xl mx-auto border-t border-gray-900 pt-8 flex flex-col md:flex-row justify-between items-center gap-6 text-[10px] font-bold text-gray-600 uppercase tracking-[0.3em]">
             <p>&copy; 2026 THE AGENCY. TOP SECRET.</p>
             <div class="flex gap-6">
-                <a href="mailto:ginko@ginkogrudev.com?subject=I%20Want%20A%20Site%20Like%20This" class="text-[#FF107A] hover:text-white transition focus:outline-none focus:ring-2 focus:ring-[#7000FF] p-1 rounded">Need A Mockup Site? Contact Me.</a>
+                <a href="mailto:ginko@ginkogrudev.com?subject=I%20Want%20A%20Site%20Like%20This" class="text-[#FF107A] hover:text-white transition focus:outline-none focus:ring-2 focus:ring-[#7000FF] p-1 rounded">Need A Real Site? Contact Me.</a>
             </div>
         </div>
     </footer>

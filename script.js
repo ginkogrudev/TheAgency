@@ -5,28 +5,50 @@ document.addEventListener('DOMContentLoaded', () => {
     // 1. Dynamic Navigation Shadow on Scroll
     // ----------------------------------------------------
 // Magnifying Glass Scroll Effect
-    const magSection = document.getElementById('magnifier-section');
-    const glass = document.getElementById('magnifying-glass');
-    const magContent = document.getElementById('magnifier-content');
+   // ----------------------------------------------------
+    // The Pink Void: Expanding Circle Scroll Effect
+    // ----------------------------------------------------
+    const circleSection = document.getElementById('circle-section');
+    const expandingCircle = document.getElementById('expanding-circle');
+    const circleContent = document.getElementById('circle-content');
+    const circleText = document.getElementById('circle-text');
+    const scrollPrompt = document.getElementById('scroll-prompt');
 
-    if (magSection && glass && magContent) {
+    if (circleSection && expandingCircle && circleContent) {
         window.addEventListener('scroll', () => {
-            const rect = magSection.getBoundingClientRect();
-            // Calculate how far down the user has scrolled within this specific section
-            const scrollProgress = Math.max(0, Math.min(1, -rect.top / (rect.height - window.innerHeight)));
-            
-            // Scale from 1 to 40 times its original size
-            const scaleValue = 1 + (scrollProgress * 40);
-            glass.style.transform = `scale(${scaleValue})`;
+            // requestAnimationFrame forces the browser to paint at 60fps (PageSpeed 100/100 practice)
+            window.requestAnimationFrame(() => {
+                const rect = circleSection.getBoundingClientRect();
+                const windowHeight = window.innerHeight;
+                
+                // Calculate scroll progress (0 to 1) exactly within this section
+                let scrollProgress = 0;
+                if (rect.top <= 0) {
+                    scrollProgress = Math.min(1, Math.abs(rect.top) / (rect.height - windowHeight));
+                }
 
-            // Once the lens is massive, fade in the CTA button inside it
-            if (scaleValue > 15) {
-                magContent.style.opacity = '1';
-                magContent.style.pointerEvents = 'auto'; // Make button clickable
-            } else {
-                magContent.style.opacity = '0';
-                magContent.style.pointerEvents = 'none';
-            }
+                // Scale the 16px circle up to 300x its size (4800px) to cover massive 4k screens
+                const maxScale = 300; 
+                const scaleValue = 1 + (scrollProgress * maxScale);
+                
+                // Hardware accelerated scale
+                expandingCircle.style.transform = `scale(${scaleValue})`;
+
+                // Trigger the CTA reveal when the circle covers the screen (around 40% scrolled)
+                if (scrollProgress > 0.4) {
+                    circleContent.style.opacity = '1';
+                    circleContent.style.pointerEvents = 'auto'; // Make CTA clickable
+                    
+                    if (circleText) circleText.style.opacity = '0';
+                    if (scrollPrompt) scrollPrompt.style.opacity = '0';
+                } else {
+                    circleContent.style.opacity = '0';
+                    circleContent.style.pointerEvents = 'none'; // Prevent accidental clicks
+                    
+                    if (circleText) circleText.style.opacity = '1';
+                    if (scrollPrompt) scrollPrompt.style.opacity = '1';
+                }
+            });
         });
     }
 
