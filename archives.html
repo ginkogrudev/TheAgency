@@ -10,31 +10,49 @@
 </head>
 <body class="antialiased vhs-grid bg-[var(--fresh-white)] text-[#111]">
 
-    <nav class="w-full bg-[#0A0A0A] border-b-4 border-[#7000FF] sticky top-0 z-50 transition-shadow duration-300">
-        <div class="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between">
-            <a href="index.html" class="flex items-center gap-4 cursor-pointer group">
-                <div class="w-12 h-12 bg-black border-2 border-[#FF107A] rounded-xl flex items-center justify-center group-hover:bg-[#FF107A] transition-colors duration-300">
-                    <svg class="w-7 h-7 text-[#FF107A] group-hover:text-black transition-colors" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M17.5 4a3.5 3.5 0 00-2.8 1.43 8.9 8.9 0 00-5.4 0A3.5 3.5 0 106 8.5v.17c-2.3.8-4 3.03-4 5.83 0 3.31 2.69 6 6 6h8c3.31 0 6-2.69 6-6 0-2.8-1.7-5.02-4-5.83V8.5a3.5 3.5 0 00-1.5-2.87V4h-1zM7 7.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zm11.5 1.5a1.5 1.5 0 110-3 1.5 1.5 0 010 3zM10 16a2 2 0 11-4 0h4zm8 0a2 2 0 11-4 0h4z"/>
-                    </svg>
-                </div>
-                <div class="font-action font-black text-2xl text-white tracking-widest uppercase">
-                    The <span class="text-[#FF107A]">Agency</span>
-                </div>
-            </a>
-            
-            <div class="hidden lg:flex space-x-8 font-bold text-xs uppercase tracking-widest text-gray-400">
-                <a href="index.html" class="hover:text-[#FF107A] transition">The Intel</a>
-                <a href="methodology.html" class="hover:text-[#FF107A] transition">Methodology</a>
-                <a href="archives.html" class="text-white border-b-2 border-[#FF107A] pb-1">The Archives</a>
-                <a href="about.html" class="hover:text-[#FF107A] transition">The Dossier</a>
+   <nav id="main-nav" class="w-full bg-[#0A0A0A] border-b-4 border-[#7000FF] sticky top-0 z-50 transition-shadow duration-300" aria-label="Main Navigation">
+    <div class="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between">
+        
+        <a href="index.html" aria-label="The Agency Home" class="flex items-center gap-4 cursor-pointer group focus:outline-none focus:ring-2 focus:ring-[#FF107A] focus:ring-offset-4 focus:ring-offset-[#0A0A0A] rounded-xl">
+            <div class="w-12 h-12 bg-black border-2 border-[#FF107A] rounded-xl flex items-center justify-center group-hover:bg-[#FF107A] transition-colors duration-300" aria-hidden="true">
+                <svg class="w-7 h-7 text-[#FF107A] group-hover:text-black transition-colors" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M17.5 4a3.5 3.5 0 00-2.8 1.43 8.9 8.9 0 00-5.4 0A3.5 3.5 0 106 8.5v.17c-2.3.8-4 3.03-4 5.83 0 3.31 2.69 6 6 6h8c3.31 0 6-2.69 6-6 0-2.8-1.7-5.02-4-5.83V8.5a3.5 3.5 0 00-1.5-2.87V4h-1zM7 7.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zm11.5 1.5a1.5 1.5 0 110-3 1.5 1.5 0 010 3zM10 16a2 2 0 11-4 0h4zm8 0a2 2 0 11-4 0h4z"/>
+                </svg>
             </div>
-
-            <a href="clearance.html" class="hidden md:block px-8 py-3 bg-[#7000FF] text-white font-action font-black uppercase tracking-widest text-sm hover:bg-[#FF107A] transition-colors duration-300">
-                Request Clearance
-            </a>
+            <div class="font-action font-black text-2xl text-white tracking-widest uppercase">
+                The <span class="text-[#FF107A]">Agency</span>
+            </div>
+        </a>
+        
+        <div class="hidden lg:flex space-x-8 font-bold text-xs uppercase tracking-widest text-gray-400">
+            <a href="active-dossiers.html" class="hover:text-[#FF107A] focus:outline-none focus:text-[#FF107A] focus:ring-2 focus:ring-[#7000FF] px-2 py-1 transition-all">Who We Have</a>
+            <a href="methodology.html" class="hover:text-[#FF107A] focus:outline-none focus:text-[#FF107A] focus:ring-2 focus:ring-[#7000FF] px-2 py-1 transition-all">How We Work</a>
+            <a href="archives.html" class="hover:text-[#FF107A] focus:outline-none focus:text-[#FF107A] focus:ring-2 focus:ring-[#7000FF] px-2 py-1 transition-all">Past Wins</a>
         </div>
-    </nav>
+
+        <a href="clearance.html" class="hidden md:flex px-8 py-3 bg-[#7000FF] text-white font-action font-black uppercase tracking-widest text-sm hover:bg-[#FF107A] focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#0A0A0A] transition-all duration-300 shadow-[0_4px_14px_0_rgba(112,0,255,0.39)]">
+            Start The Wire
+        </a>
+
+        <button id="mobile-menu-btn" type="button" class="lg:hidden text-white hover:text-[#FF107A] focus:outline-none focus:ring-2 focus:ring-[#FF107A] p-2 rounded-md" aria-controls="mobile-menu" aria-expanded="false" aria-label="Toggle navigation menu">
+            <svg id="menu-icon" class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+            <svg id="close-icon" class="w-8 h-8 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+        </button>
+    </div>
+
+    <div id="mobile-menu" class="hidden lg:hidden bg-[#0A0A0A] border-b-4 border-[#FF107A] absolute w-full left-0 shadow-[0_20px_40px_rgba(0,0,0,0.8)]" aria-hidden="true">
+        <div class="px-6 py-8 flex flex-col space-y-6 text-center">
+            <a href="active-dossiers.html" class="text-white font-action font-black text-2xl uppercase tracking-widest hover:text-[#FF107A] focus:outline-none focus:text-[#FF107A] p-2">Who We Have</a>
+            <a href="methodology.html" class="text-white font-action font-black text-2xl uppercase tracking-widest hover:text-[#FF107A] focus:outline-none focus:text-[#FF107A] p-2">How We Work</a>
+            <a href="archives.html" class="text-white font-action font-black text-2xl uppercase tracking-widest hover:text-[#FF107A] focus:outline-none focus:text-[#FF107A] p-2">Past Wins</a>
+            <a href="clearance.html" class="mt-4 inline-block w-full px-8 py-5 bg-[#7000FF] text-white font-action font-black uppercase tracking-widest text-lg hover:bg-[#FF107A] focus:outline-none focus:ring-2 focus:ring-white transition-colors">Start The Wire</a>
+        </div>
+    </div>
+</nav>
 
     <header class="pt-24 pb-16 px-6 max-w-5xl mx-auto text-center relative z-10">
         <div class="inline-flex items-center gap-2 mb-8 border-2 border-black px-4 py-1 bg-white">

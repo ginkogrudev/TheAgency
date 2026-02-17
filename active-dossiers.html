@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Active Dossiers | Live Intel | The Syndicate</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&family=Outfit:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body class="antialiased vhs-grid">
+
+   <nav id="main-nav" class="w-full bg-[#0A0A0A] border-b-4 border-[#7000FF] sticky top-0 z-50 transition-shadow duration-300" aria-label="Main Navigation">
+    <div class="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between">
+        
+        <a href="index.html" aria-label="The Agency Home" class="flex items-center gap-4 cursor-pointer group focus:outline-none focus:ring-2 focus:ring-[#FF107A] focus:ring-offset-4 focus:ring-offset-[#0A0A0A] rounded-xl">
+            <div class="w-12 h-12 bg-black border-2 border-[#FF107A] rounded-xl flex items-center justify-center group-hover:bg-[#FF107A] transition-colors duration-300" aria-hidden="true">
+                <svg class="w-7 h-7 text-[#FF107A] group-hover:text-black transition-colors" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M17.5 4a3.5 3.5 0 00-2.8 1.43 8.9 8.9 0 00-5.4 0A3.5 3.5 0 106 8.5v.17c-2.3.8-4 3.03-4 5.83 0 3.31 2.69 6 6 6h8c3.31 0 6-2.69 6-6 0-2.8-1.7-5.02-4-5.83V8.5a3.5 3.5 0 00-1.5-2.87V4h-1zM7 7.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zm11.5 1.5a1.5 1.5 0 110-3 1.5 1.5 0 010 3zM10 16a2 2 0 11-4 0h4zm8 0a2 2 0 11-4 0h4z"/>
+                </svg>
+            </div>
+            <div class="font-action font-black text-2xl text-white tracking-widest uppercase">
+                The <span class="text-[#FF107A]">Agency</span>
+            </div>
+        </a>
+        
+        <div class="hidden lg:flex space-x-8 font-bold text-xs uppercase tracking-widest text-gray-400">
+            <a href="active-dossiers.html" class="hover:text-[#FF107A] focus:outline-none focus:text-[#FF107A] focus:ring-2 focus:ring-[#7000FF] px-2 py-1 transition-all">Who We Have</a>
+            <a href="methodology.html" class="hover:text-[#FF107A] focus:outline-none focus:text-[#FF107A] focus:ring-2 focus:ring-[#7000FF] px-2 py-1 transition-all">How We Work</a>
+            <a href="archives.html" class="hover:text-[#FF107A] focus:outline-none focus:text-[#FF107A] focus:ring-2 focus:ring-[#7000FF] px-2 py-1 transition-all">Past Wins</a>
+        </div>
+
+        <a href="clearance.html" class="hidden md:flex px-8 py-3 bg-[#7000FF] text-white font-action font-black uppercase tracking-widest text-sm hover:bg-[#FF107A] focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#0A0A0A] transition-all duration-300 shadow-[0_4px_14px_0_rgba(112,0,255,0.39)]">
+            Start The Wire
+        </a>
+
+        <button id="mobile-menu-btn" type="button" class="lg:hidden text-white hover:text-[#FF107A] focus:outline-none focus:ring-2 focus:ring-[#FF107A] p-2 rounded-md" aria-controls="mobile-menu" aria-expanded="false" aria-label="Toggle navigation menu">
+            <svg id="menu-icon" class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+            <svg id="close-icon" class="w-8 h-8 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+        </button>
+    </div>
+
+    <div id="mobile-menu" class="hidden lg:hidden bg-[#0A0A0A] border-b-4 border-[#FF107A] absolute w-full left-0 shadow-[0_20px_40px_rgba(0,0,0,0.8)]" aria-hidden="true">
+        <div class="px-6 py-8 flex flex-col space-y-6 text-center">
+            <a href="active-dossiers.html" class="text-white font-action font-black text-2xl uppercase tracking-widest hover:text-[#FF107A] focus:outline-none focus:text-[#FF107A] p-2">Who We Have</a>
+            <a href="methodology.html" class="text-white font-action font-black text-2xl uppercase tracking-widest hover:text-[#FF107A] focus:outline-none focus:text-[#FF107A] p-2">How We Work</a>
+            <a href="archives.html" class="text-white font-action font-black text-2xl uppercase tracking-widest hover:text-[#FF107A] focus:outline-none focus:text-[#FF107A] p-2">Past Wins</a>
+            <a href="clearance.html" class="mt-4 inline-block w-full px-8 py-5 bg-[#7000FF] text-white font-action font-black uppercase tracking-widest text-lg hover:bg-[#FF107A] focus:outline-none focus:ring-2 focus:ring-white transition-colors">Start The Wire</a>
+        </div>
+    </div>
+</nav>
+
+    <header class="pt-24 pb-16 px-6 max-w-5xl mx-auto text-center relative z-10">
+        <div class="inline-flex items-center gap-2 mb-8 border border-[#FF107A] px-4 py-1 bg-black neon-border">
+            <div class="w-2 h-2 bg-[#FF107A] animate-pulse"></div>
+            <span class="text-[#FF107A] text-xs font-bold tracking-[0.3em] uppercase">Live Data Feed</span>
+        </div>
+        <h1 class="font-action text-5xl md:text-7xl font-black uppercase tracking-tighter mb-8 text-white">
+            Active <span class="text-[#7000FF]">Operations.</span>
+        </h1>
+        <p class="text-xl font-medium text-gray-400 leading-relaxed max-w-2xl mx-auto">
+            A real-time look at the ecosystems we are currently building, and the elite assets we are quietly representing. <span class="text-white">Strictly confidential.</span>
+        </p>
+    </header>
+
+    <section class="pt-12 pb-8 px-6 max-w-7xl mx-auto relative z-10">
+        
+        <div class="mb-20">
+            <h3 class="font-action text-3xl font-black text-white uppercase mb-8 border-b-2 border-gray-800 pb-4 flex justify-between items-end">
+                <span>01. Open <span class="text-[#FF107A]">Requisitions</span></span>
+                <span class="text-xs font-mono text-gray-500 tracking-widest">Client Side</span>
+            </h3>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-[#111] border border-gray-800 p-8 hover:border-[#FF107A] transition-colors">
+                    <div class="flex justify-between items-start mb-6">
+                        <div>
+                            <span class="text-[10px] font-bold uppercase tracking-widest text-[#FF107A] mb-2 block">Pre-IPO SaaS / Remote</span>
+                            <h4 class="font-action text-2xl font-black text-white uppercase">VP of Growth & SEO</h4>
+                        </div>
+                        <span class="bg-[#7000FF] text-white text-[10px] px-3 py-1 uppercase tracking-widest font-bold">Retained</span>
+                    </div>
+                    <ul class="space-y-3 font-mono text-xs text-gray-400 mb-6">
+                        <li><span class="text-gray-600">Base Comp:</span> $220k - $250k</li>
+                        <li><span class="text-gray-600">Equity:</span> <span class="redacted">0.75% to 1.25%</span></li>
+                        <li><span class="text-gray-600">Mandate:</span> Scale organic from $10M to $30M ARR.</li>
+                    </ul>
+                    <div class="border-t border-gray-800 pt-4 flex justify-between items-center text-xs">
+                        <span class="text-[#FF107A] uppercase tracking-widest font-bold animate-pulse">Status: Interviewing Phase</span>
+                        <a href="clearance.html" class="text-white hover:text-[#FF107A] transition-colors uppercase tracking-widest font-bold">Inquire &rarr;</a>
+                    </div>
+                </div>
+
+                <div class="bg-[#111] border border-gray-800 p-8 hover:border-[#7000FF] transition-colors">
+                    <div class="flex justify-between items-start mb-6">
+                        <div>
+                            <span class="text-[10px] font-bold uppercase tracking-widest text-[#7000FF] mb-2 block">Global FinTech / NYC</span>
+                            <h4 class="font-action text-2xl font-black text-white uppercase">Chief Marketing Officer</h4>
+                        </div>
+                        <span class="bg-[#7000FF] text-white text-[10px] px-3 py-1 uppercase tracking-widest font-bold">Retained</span>
+                    </div>
+                    <ul class="space-y-3 font-mono text-xs text-gray-400 mb-6">
+                        <li><span class="text-gray-600">Base Comp:</span> <span class="redacted">$350k+ (Negotiable)</span></li>
+                        <li><span class="text-gray-600">Team Size:</span> 45+ Global Reports</li>
+                        <li><span class="text-gray-600">Mandate:</span> Rebuild legacy brand for Gen-Z market.</li>
+                    </ul>
+                    <div class="border-t border-gray-800 pt-4 flex justify-between items-center text-xs">
+                        <span class="text-gray-500 uppercase tracking-widest font-bold">Status: Finalizing Brief</span>
+                        <a href="clearance.html" class="text-white hover:text-[#7000FF] transition-colors uppercase tracking-widest font-bold">Inquire &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <h3 class="font-action text-3xl font-black text-white uppercase mb-8 border-b-2 border-gray-800 pb-4 flex justify-between items-end">
+                <span>02. The <span class="text-[#7000FF]">Roster</span></span>
+                <span class="text-xs font-mono text-gray-500 tracking-widest">Candidate Side</span>
+            </h3>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-black border border-[#7000FF] p-8 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-16 h-16 bg-[#7000FF] opacity-10 rounded-bl-full"></div>
+                    <div class="flex justify-between items-start mb-6 relative z-10">
+                        <div>
+                            <span class="text-[10px] font-bold uppercase tracking-widest text-gray-500 mb-2 block">Asset ID: 088-KILO</span>
+                            <h4 class="font-action text-2xl font-black text-white uppercase">Former Head of SEO</h4>
+                        </div>
+                        <span class="border border-[#7000FF] text-[#7000FF] text-[10px] px-3 py-1 uppercase tracking-widest font-bold">Deployable</span>
+                    </div>
+                    <p class="text-sm text-gray-400 font-medium mb-4 leading-relaxed">
+                        Exited a major E-commerce aggregator after successfully navigating 3 core updates. Deeply technical Python background mixed with board-level presentation skills.
+                    </p>
+                    <ul class="space-y-2 font-mono text-xs text-[#FF107A] mb-6">
+                        <li>> Increased non-branded traffic by 400% in 18 mos.</li>
+                        <li>> Managed $5M annual tooling/content budget.</li>
+                    </ul>
+                    <div class="border-t border-gray-800 pt-4 flex justify-between items-center text-xs">
+                        <span class="text-white uppercase tracking-widest font-bold">Target Comp: $200k Base</span>
+                        <a href="clearance.html" class="text-[#7000FF] hover:text-white transition-colors uppercase tracking-widest font-bold">Request Profile &rarr;</a>
+                    </div>
+                </div>
+                
+                <div class="bg-[#111] border border-gray-800 p-8 opacity-50 select-none">
+                    <div class="flex justify-between items-start mb-6">
+                        <div>
+                            <span class="text-[10px] font-bold uppercase tracking-widest text-gray-600 mb-2 block">Asset ID: 092-ECHO</span>
+                            <h4 class="font-action text-2xl font-black text-gray-500 uppercase">Director of Growth</h4>
+                        </div>
+                    </div>
+                    <p class="text-sm text-gray-600 font-medium mb-4">
+                        <span class="redacted block w-full mb-2">████████████████████████████████</span>
+                        <span class="redacted block w-3/4">██████████████████████</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="relative z-20 -mt-32 pt-40 pb-32 px-6 encryption-gate flex flex-col items-center justify-center">
+        
+        <div class="w-16 h-16 bg-black border-2 border-[#FF107A] flex items-center justify-center mb-8 rounded-full neon-border">
+            <svg class="w-6 h-6 text-[#FF107A]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+            </svg>
+        </div>
+
+        <h2 class="font-action text-4xl md:text-5xl font-black text-white uppercase text-center mb-4">
+            Decrypt The <span class="text-[#FF107A]">Full Pipeline.</span>
+        </h2>
+        <p class="text-gray-400 font-medium max-w-lg mx-auto text-center mb-10 leading-relaxed">
+            There are currently <span class="text-white font-bold">14 Active Requisitions</span> and <span class="text-white font-bold">8 Deployable Assets</span> in our private network. Enter your email to view the unredacted feed.
+        </p>
+
+        <form class="w-full max-w-md flex flex-col sm:flex-row shadow-[0_0_30px_rgba(112,0,255,0.2)]" action="#" method="POST" onsubmit="event.preventDefault(); alert('Authorization requested. A secure link will be sent to your email.');">
+            <input type="email" aria-label="Business Email" required placeholder="BUSINESS EMAIL" class="w-full bg-black border border-gray-700 px-6 py-4 text-white font-mono text-sm uppercase tracking-widest focus:outline-none focus:border-[#FF107A] transition-colors">
+            <button type="submit" aria-label="Decrypt Pipeline" class="bg-[#7000FF] px-8 py-4 text-white font-action font-black uppercase tracking-widest text-sm hover:bg-[#FF107A] transition-colors whitespace-nowrap">
+                Unlock
+            </button>
+        </form>
+        <span class="text-[10px] text-gray-600 uppercase tracking-widest font-bold mt-6">By unlocking, you agree to absolute discretion.</span>
+    </section>
+
+    <footer class="bg-[#050505] pt-12 pb-12 px-6 border-t-[16px] border-[#7000FF] relative z-30">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 mb-16 pt-12">
+            <div class="col-span-1 md:col-span-1">
+                <div class="flex items-center gap-3 mb-6">
+                    <svg class="w-8 h-8 text-[#FF107A]" aria-hidden="true" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M17.5 4a3.5 3.5 0 00-2.8 1.43 8.9 8.9 0 00-5.4 0A3.5 3.5 0 106 8.5v.17c-2.3.8-4 3.03-4 5.83 0 3.31 2.69 6 6 6h8c3.31 0 6-2.69 6-6 0-2.8-1.7-5.02-4-5.83V8.5a3.5 3.5 0 00-1.5-2.87V4h-1zM7 7.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zm11.5 1.5a1.5 1.5 0 110-3 1.5 1.5 0 010 3zM10 16a2 2 0 11-4 0h4zm8 0a2 2 0 11-4 0h4z"/>
+                    </svg>
+                    <span class="font-action font-black text-xl text-white uppercase tracking-widest">The Agency</span>
+                </div>
+                <p class="text-gray-500 text-sm font-medium leading-relaxed mb-6">
+                    Engineering elite leadership ecosystems for the world's most demanding boards.
+                </p>
+            </div>
+            <div>
+                <h4 class="font-action font-black text-white uppercase tracking-widest mb-6 border-b border-gray-800 pb-2">The Intel</h4>
+                <ul class="space-y-3 text-sm font-bold text-gray-500 uppercase tracking-widest">
+                    <li><a href="methodology.html" class="hover:text-[#FF107A] transition focus:outline-none focus:text-[#FF107A]">Methodology</a></li>
+                    <li><a href="archives.html" class="hover:text-[#FF107A] transition focus:outline-none focus:text-[#FF107A]">The Archives</a></li>
+                    <li><a href="about.html" class="hover:text-[#FF107A] transition focus:outline-none focus:text-[#FF107A]">Our 10-Year File</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-action font-black text-white uppercase tracking-widest mb-6 border-b border-gray-800 pb-2">Candidates</h4>
+                <ul class="space-y-3 text-sm font-bold text-gray-500 uppercase tracking-widest">
+                    <li><a href="active-dossiers.html" class="text-[#FF107A] transition focus:outline-none">The Active Pipeline</a></li>
+                    <li><a href="#" class="hover:text-[#FF107A] transition focus:outline-none focus:text-[#FF107A]">Interview Protocol</a></li>
+                    <li><a href="clearance.html" class="hover:text-[#FF107A] transition focus:outline-none focus:text-[#FF107A]">Submit Dossier</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto border-t border-gray-900 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] font-bold text-gray-600 uppercase tracking-[0.3em]">
+            <p>&copy; 2026 THE AGENCY. CONFIDENTIAL.</p>
+            <div class="flex gap-6">
+                <a href="#" class="hover:text-white transition focus:outline-none">Privacy Protocol</a>
+                <a href="#" class="hover:text-white transition focus:outline-none">Terms of Engagement</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

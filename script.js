@@ -1,32 +1,83 @@
 document.addEventListener('DOMContentLoaded', () => {
-    console.log("The Syndicate: Intel Loaded.");
+    console.log("The Syndicate: Intel Loaded. Clear for operation.");
 
-    // Dynamic Navigation Shadow on Scroll
-    const nav = document.querySelector('nav');
-    
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            nav.classList.add('shadow-[0_4px_30px_rgba(112,0,255,0.15)]');
-        } else {
-            nav.classList.remove('shadow-[0_4px_30px_rgba(112,0,255,0.15)]');
-        }
-    });
+    // ----------------------------------------------------
+    // 1. Dynamic Navigation Shadow on Scroll
+    // ----------------------------------------------------
+    const nav = document.getElementById('main-nav');
+    if (nav) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                nav.classList.add('shadow-[0_4px_30px_rgba(112,0,255,0.15)]');
+            } else {
+                nav.classList.remove('shadow-[0_4px_30px_rgba(112,0,255,0.15)]');
+            }
+        });
+    }
 
-    // Smooth scroll for all anchor links
+    // ----------------------------------------------------
+    // 2. Smooth Scroll for Anchor Links
+    // ----------------------------------------------------
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
             const targetId = this.getAttribute('href');
-            
             if (targetId === '#') return;
             
             const targetElement = document.querySelector(targetId);
             if (targetElement) {
-                targetElement.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
+                targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
             }
         });
     });
+
+    // ----------------------------------------------------
+    // 3. Accessible Mobile Menu Toggle
+    // ----------------------------------------------------
+    const mobileBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+    const closeIcon = document.getElementById('close-icon');
+
+    if (mobileBtn && mobileMenu) {
+        mobileBtn.addEventListener('click', () => {
+            const isExpanded = mobileBtn.getAttribute('aria-expanded') === 'true';
+            
+            // Toggle State
+            mobileBtn.setAttribute('aria-expanded', !isExpanded);
+            mobileMenu.classList.toggle('hidden');
+            mobileMenu.setAttribute('aria-hidden', isExpanded);
+            
+            // Toggle Icons
+            menuIcon.classList.toggle('hidden');
+            closeIcon.classList.toggle('hidden');
+        });
+
+        // Close mobile menu if a link inside it is clicked
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileBtn.click();
+            });
+        });
+    }
+
+    // ----------------------------------------------------
+    // 4. Clearance Page: URL Drop to Mailto Router
+    // ----------------------------------------------------
+    const urlForm = document.getElementById('urlForm');
+    if (urlForm) {
+        urlForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const urlInput = document.getElementById('company-url').value;
+            
+            // Route directly to your portfolio email
+            const email = "ginko@ginkogrudev.com";
+            const subject = encodeURIComponent("Please review my site");
+            const body = encodeURIComponent("Hi Ginko,\n\nPlease take a look at my website: " + urlInput + "\n\nLet's talk soon.");
+            
+            // Trigger the native mail client
+            window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
+        });
+    }
 });
